@@ -48,7 +48,7 @@ export default function Header() {
                 boxShadow: '0 0 20px rgba(124, 58, 237, 0.5)',
               }}
             >
-              <span className="text-white font-black text-sm">H</span>
+              <span className="text-white font-black text-xs">Hi</span>
               <div
                 className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
                 style={{ background: 'linear-gradient(135deg, #9f5ff7, #22d3ee)' }}

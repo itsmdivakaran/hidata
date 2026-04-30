@@ -35,7 +35,7 @@ export default function Footer() {
                   boxShadow: '0 0 20px rgba(124, 58, 237, 0.4)',
                 }}
               >
-                <span className="text-white font-black text-sm">H</span>
+                <span className="text-white font-black text-xs">Hi</span>
               </div>
               <span
                 className="text-xl font-black"
