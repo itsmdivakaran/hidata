@@ -1,0 +1,31 @@
+name: Update News
+
+on:
+  schedule:
+    # Every Sunday at 9 AM UTC (2:30 PM IST)
+    - cron: '0 9 * * 0'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Revalidate cache
+        run: |
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.REVALIDATE_TOKEN }}" \
+          https://hidata.co.in/api/revalidate?secret=${{ secrets.REVALIDATE_TOKEN }}
+        continue-on-error: true
